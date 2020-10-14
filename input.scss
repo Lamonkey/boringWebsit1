@@ -1,0 +1,148 @@
+@media (max-width:576px){
+    body{
+        font-size: x-large;
+    } ;
+    #header{
+        margin-top:30px;
+    }
+    button{
+        margin-top: 30px;
+    }
+   
+
+}
+
+@media (min-width:577px){
+    body{
+        font-size: xx-large;
+    } ;
+    #header{
+        margin-top:20px;
+    }
+    button{
+        margin-top: 20px;
+    }   
+}
+body { font-family: sans-serif; }
+
+%scene {
+  width: 200px;
+  height: 260px;
+  border: 1px solid rgb(255, 255, 255);
+  margin: 40px 0;
+  perspective: 600px;
+}
+
+%card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transform-origin: center right;
+  transition: transform 1s;
+}
+
+%flippingCard {
+  transform: translateX(-100%) rotateY(-180deg);
+}
+
+%cardFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  line-height: 260px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 40px;
+  backface-visibility: hidden;
+}
+
+%cardFaceFront{
+  background: red;
+}
+
+%cardFaceBack{
+  background-size:cover;
+  background-position: center center;
+  transform: rotateY(180deg);
+  background-repeat: no-repeat;
+
+}
+
+#textSearch{
+    .scene{
+        @extend %scene;
+    }
+    .card{
+        @extend %card;
+    }
+    .card.is-flipped{
+        @extend %flippingCard;
+    }
+    .card__face{
+        @extend %cardFace;
+    }
+    .card__face--front{
+        @extend %cardFaceFront;
+        
+       
+    }
+    .card__face--back{
+        background-image: url("ricardo.jpg");
+        @extend .card__face--back;
+        
+       
+       
+    }
+
+}
+
+#imageSearch{
+    .scene{
+        @extend %scene;
+    }
+    .card{
+        @extend %card;
+    }
+    .card.is-flipped{
+        @extend %flippingCard;
+    }
+    .card__face{
+        @extend %cardFace;
+    }
+    .card__face--front{
+        @extend %cardFaceFront;
+    }
+    .card__face--back{
+        @extend .card__face--back;
+        background-image: url("billy.jpg");
+        
+    }
+
+}
+
+#advancedSearch{
+    .scene{
+        @extend %scene;
+    }
+    .card{
+        @extend %card;
+    }
+    .card.is-flipped{
+        @extend %flippingCard;
+    }
+    .card__face{
+        @extend %cardFace;
+    }
+    .card__face--front{
+        @extend %cardFaceFront;
+    }
+    .card__face--back{
+        @extend .card__face--back;
+        background-image: url("aGuy.jpeg");
+       
+    }
+
+}
